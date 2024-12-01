@@ -21,6 +21,6 @@ Feature: Registrar un usuario
 
     Examples:
       | username    | password |
-      | usuarioqwerq | pass123  |
+      | usuarioqwerqa | pass123  |
 
 

@@ -38,6 +38,11 @@ public class RegistrarUsuarioStepDefinition {
     @Then("se realiza el registro de manera exitosa")
     public void seRealizaElRegistroDeManeraExitosa() {
         System.out.println("exitoso");
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @When("se registra con un nombre de usuario {string} y contrasenia {string}")
