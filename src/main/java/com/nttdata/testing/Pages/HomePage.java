@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.targets.Target;
 @DefaultUrl("https://www.demoblaze.com/")
 public class HomePage extends PageObject {
     //  LOG IN
-
+        
     public static final Target BTN_LOGIN = Target.the("Boton abrir el modal de login")
             .located(By.id("login2"));
 

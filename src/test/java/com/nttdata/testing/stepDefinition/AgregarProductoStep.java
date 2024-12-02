@@ -33,27 +33,23 @@ public class AgregarProductoStep {
 
     @Given("el {actor} esta logeado con el usuario {string} y contrasenia {string}")
     public void elUsuarioEstaLogeadoConElUsuarioYContrasenia( Actor actor, String username, String password) {
-
-
+        // El actor se logea con el usuario y contraseña
             actor.attemptsTo(NavigateTo.theHomePage());
             theActorInTheSpotlight().attemptsTo(Click.on(HomePage.BTN_LOGIN));
             theActorInTheSpotlight().attemptsTo(Enter.theValue(username).into(HomePage.INP_LOGIN_USERNAME));
             theActorInTheSpotlight().attemptsTo(Enter.theValue(password).into(HomePage.INP_LOGIN_PASSWORD));
             theActorInTheSpotlight().attemptsTo(Click.on(HomePage.BTN_LOGIN_SUBMIT));
-
-
-
-
-
-
     }
 
     @And("selecciona un producto")
     public void seleccionaUnProducto() {
         try {
             Thread.sleep(3000);
+            //Obtengo el producto por su xpath 
         WebElement datos = getDriver().findElement(By.xpath("//img[@src='imgs/galaxy_s6.jpg']"));
+        // Espero hasta que el elemento este visible
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(30));wait.until(ExpectedConditions.visibilityOf(datos));
+        // Hago click en el producto
         datos.click();
 
         } catch (Exception e) {
